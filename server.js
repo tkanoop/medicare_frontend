@@ -14,29 +14,29 @@ app.use(morgan('dev'))
 const mongoose=require('mongoose')
 
 
-app.use(
-    cors({
-        origin:['http://localhost:3000'],
-        methods:['GET','POST','PATCH'],
-        credentials:true
-    })
-)
-
-app.use('/api/client',clientRoutes)
-app.use('/api/admin',adminRoutes)
-app.use('/api/doctor',doctorRoutes)
-
 // app.use(
 //     cors({
-//         origin:['https://mankindmedicare.online'],
+//         origin:['http://localhost:3000'],
 //         methods:['GET','POST','PATCH'],
 //         credentials:true
 //     })
 // )
 
-// app.use('/backend/api/client',clientRoutes)
-// app.use('/backend/api/admin',adminRoutes)
-// app.use('/backend/api/doctor',doctorRoutes)
+// app.use('/api/client',clientRoutes)
+// app.use('/api/admin',adminRoutes)
+// app.use('/api/doctor',doctorRoutes)
+
+app.use(
+    cors({
+        origin:['https://medicarefrontend.up.railway.app/'],
+        methods:['GET','POST','PATCH'],
+        credentials:true
+    })
+)
+
+app.use('/backend/api/client',clientRoutes)
+app.use('/backend/api/admin',adminRoutes)
+app.use('/backend/api/doctor',doctorRoutes)
 
 mongoose.set('strictQuery', true);
 mongoose.connect(process.env.MONGO_URI)
