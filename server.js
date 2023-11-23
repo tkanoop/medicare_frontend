@@ -28,7 +28,7 @@ const mongoose=require('mongoose')
 
 app.use(
     cors({
-        origin:['https://medicarefrontend.up.railway.app/'],
+        origin:['https://medicarefrontend.up.railway.app'],
         methods:['GET','POST','PATCH'],
         credentials:true
     })
