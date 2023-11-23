@@ -28,7 +28,7 @@ const mongoose=require('mongoose')
 
 app.use(
     cors({
-        origin:['https://medicarefrontend.up.railway.app'],
+        origin:['https://sprightly-brigadeiros-7736df.netlify.app'],
         methods:['GET','POST','PATCH'],
         credentials:true
     })
